@@ -1,56 +1,41 @@
 {
-  "name": "react-wavify",
-  "version": "1.5.7",
-  "description": "Animated wave component for React",
+  "name": "solid-wavify",
+  "version": "1.0.0",
+  "description": "Animated wave component for SolidJS",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
   "sideEffects": false,
   "src": "src/index.js",
   "types": "lib/index.d.ts",
-  "files": [
-    "lib",
-    "License.txt",
-    "package.json",
-    "README.md"
-  ],
   "scripts": {
-    "start": "yarn watch",
-    "build:module": "microbundle --no-pkg-main --no-sourcemap --no-generateTypes --jsx React.createElement --define __isDev__=false -i src/index.js -o lib/react-wavify.module.js -f es",
-    "build:umd": "microbundle --no-pkg-main --no-sourcemap --no-generateTypes --jsx React.createElement --define __isDev__=false -i src/index.js -o lib/react-wavify.js -f umd",
-    "build:dev:module": "microbundle --no-pkg-main --no-sourcemap --no-generateTypes --jsx React.createElement --define __isDev__=true -i src/index.js -o lib/react-wavify.module.dev.js -f es",
-    "build:dev:umd": "microbundle --no-pkg-main --no-sourcemap --no-generateTypes --jsx React.createElement --define __isDev__=true -i src/index.js -o lib/react-wavify.dev.js -f umd",
-    "build:types": "cp src/index.d.ts lib/index.d.ts",
-    "clean": "rimraf lib/react-wavify.dev.js lib/react-wavify.js lib/react-wavify.module.dev.js lib/react-wavify.module.js lib/index.d.ts",
-    "build": "yarn build:dev:module && yarn build:dev:umd && yarn build:module && yarn build:umd && yarn build:types",
-    "watch": "rollup -c --watch",
-    "test": "echo \"No tests \" && exit 0"
+  
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woofers/react-wavify.git"
+    "url": "git+https://github.com/TiagoCavalcante/solid-wavify.git"
   },
   "keywords": [
-    "react",
-    "reactjs",
+    "solidjs",
     "component",
     "svg",
     "animation",
     "wave"
   ],
-  "author": "Jaxson Van Doorn <jaxson.vandoorn@gmail.com>",
+  "author": {
+    "name": "Tiago Cavalcante Trindade",
+    "email": "tiagotrindade111@gmail.com",
+    "url": "https://github.com/TiagoCavalcante"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/woofers/react-wavify/issues"
+    "url": "https://github.com/TiagoCavalcante/solid-wavify/issues"
   },
-  "homepage": "https://github.com/woofers/react-wavify#readme",
+  "homepage": "https://github.com/TiagoCavalcante/solid-wavify#readme",
   "peerDependencies": {
-    "react": "^0.13.0 || ^0.14.0 || >=15"
+    "solid-js": "*"
   },
   "devDependencies": {
     "microbundle": "^0.14.2",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "prop-types": "^15.8.1"
   }
 }

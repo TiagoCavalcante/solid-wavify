@@ -1,5 +1,3 @@
-import React, { Props, Component, SVGProps } from 'react'
-
 interface WaveOptions {
   height?: number
   amplitude?: number
