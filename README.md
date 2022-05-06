@@ -1,6 +1,6 @@
 # SolidJS Wavify
 
-[![img](https://github.com/TiagoCavalcante/solid-wavify/workflows/build/badge.svg)](https://github.com/TiagoCavalcante/solid-wavify/actions) [![img](https://badge.fury.io/js/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
+[![img](https://badge.fury.io/js/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
 
 A simple SolidJS component which creates an animated wave.
 
@@ -15,11 +15,11 @@ and is functionally similar to [Benjamin Grauwin](http://benjamin.grauwin.me/)'s
 
 **Yarn**
 
-    yarn add react-wavify
+    yarn add solid-wavify
 
 **npm**
 
-    npm install react-wavify
+    npm install solid-wavify
 
 # Usage
 
