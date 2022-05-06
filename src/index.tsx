@@ -10,7 +10,7 @@ const defaults = {
 
 export type WaveProps = WaveHTMLProps
   & Pick<BaseWaveProps, "fill" | "paused">
-  & { options: Omit<BaseWaveProps, "fill" | "paused">; };
+  & { options: Partial<Omit<BaseWaveProps, "fill" | "paused">>; };
 
 export default function Wave({
   fill = "#fff",
