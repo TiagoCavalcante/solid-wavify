@@ -1,6 +1,6 @@
 # SolidJS Wavify
 
-[![img](https://badge.fury.io/js/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
+[![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
 
 A simple SolidJS component which creates an animated wave.
 
