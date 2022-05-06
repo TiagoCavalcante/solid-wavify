@@ -1,18 +1,15 @@
+# SolidJS Wavify
 
+[![img](https://github.com/TiagoCavalcante/solid-wavify/workflows/build/badge.svg)](https://github.com/TiagoCavalcante/solid-wavify/actions) [![img](https://badge.fury.io/js/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
 
-# React Wavify
+A simple SolidJS component which creates an animated wave.
 
-[![img](https://github.com/woofers/react-wavify/workflows/build/badge.svg)](https://github.com/woofers/react-wavify/actions) [![img](https://img.shields.io/david/woofers/react-wavify)](https://www.npmjs.com/package/react-wavify) [![img](https://badge.fury.io/js/react-wavify.svg)](https://www.npmjs.com/package/react-wavify) [![img](https://img.shields.io/npm/dt/react-wavify.svg)](https://www.npmjs.com/package/react-wavify) [![img](https://badgen.net/bundlephobia/minzip/react-wavify)](https://bundlephobia.com/result?p=react-wavify) [![img](https://img.shields.io/npm/l/react-wavify.svg)](https://github.com/woofers/react-wavify/blob/main/LICENSE)
-
-A simple React component which creates an animated wave.
-
-**[Live Demo](https://jaxs.onl/react-wavify/)**
+**[Live Demo](https://jaxs.onl/solid-wavify/)**
 
 This component is heavily adapted from [Mikołaj Stolarski](https://github.com/grimor)'s awesome [Codepen](https://codepen.io/grimor/pen/qbXLdN)
 and is functionally similar to [Benjamin Grauwin](http://benjamin.grauwin.me/)'s [Wavify](https://github.com/peacepostman/wavify) plug-in.
 
 ![img](./screenshots/wave.gif "Wave")
-
 
 # Installation
 
@@ -24,12 +21,10 @@ and is functionally similar to [Benjamin Grauwin](http://benjamin.grauwin.me/)'s
 
     npm install react-wavify
 
-
 # Usage
 
 ```jsx
-import React from 'react'
-import Wave from 'react-wavify'
+import Wave from 'solid-wavify'
 
 const App = () => (
   <Wave fill='#f79902'
@@ -44,25 +39,21 @@ const App = () => (
 )
 ```
 
-Simply add the Wave component to the React application using JSX.
+Simply add the Wave component to your application using JSX.
 
 The wave's width will scale to fit the parent container.
 
-
 ## Props
-
 
 ### Fill
 
 The `fill` property can be set to anything that a SVG path can accept (usually gradients or colors). **Default:** `#FFF`
-
 
 ### Paused
 
 The `paused` property controls the play state of the animation. **Default:** `false`
 
 If set to `true` the wave animation will pause.
-
 
 ### Options
 
@@ -75,7 +66,6 @@ Any omitted options will be set to the default value.
 -   `speed` - Speed that the wave animation plays at. **Default:** `0.15`
 -   `points` - Amount of points used to form the wave.
     Can not be less than `1`. **Default:** `3`
-
 
 ### Pass Through Props
 

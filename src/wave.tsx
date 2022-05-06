@@ -31,7 +31,16 @@ export default function Wave({
   height = 20,
   points = 3,
   speed = 0.15,
-  ...props
+
+  style,
+  className,
+  fill,
+  paused,
+  children,
+  id,
+  ref,
+
+  ...rest
 }: PropsWithChildren<WaveProps>) {
   const [path, setPath] = createSignal('');
 
@@ -82,7 +91,7 @@ export default function Wave({
   }
 
   function draw() {
-    if (!props.paused) {
+    if (!paused) {
       const now = new Date().getTime();
       elapsed += now - lastUpdate;
       lastUpdate = now;
@@ -111,17 +120,6 @@ export default function Wave({
     window.cancelAnimationFrame(frameId);
     frameId = 0;
   });
-
-  const {
-    style,
-    className,
-    fill,
-    paused,
-    children,
-    id,
-    ref,
-    ...rest
-  } = props;
 
   return (
     <div
