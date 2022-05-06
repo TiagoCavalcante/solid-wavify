@@ -1,10 +1,10 @@
 # SolidJS Wavify
 
-[![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
+[![img](https://badge.fury.io/js/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://img.shields.io/npm/dt/solid-wavify.svg)](https://www.npmjs.com/package/solid-wavify) [![img](https://badgen.net/bundlephobia/minzip/solid-wavify)](https://bundlephobia.com/result?p=solid-wavify) [![img](https://img.shields.io/npm/l/solid-wavify.svg)](https://github.com/TiagoCavalcante/solid-wavify/blob/main/LICENSE)
 
 A simple SolidJS component which creates an animated wave.
 
-**[Live Demo](https://jaxs.onl/solid-wavify/)**
+**[Live Demo](https://tiagocavalcante.github.io/solid-wavify/)**
 
 This component is heavily adapted from [Mikołaj Stolarski](https://github.com/grimor)'s awesome [Codepen](https://codepen.io/grimor/pen/qbXLdN)
 and is functionally similar to [Benjamin Grauwin](http://benjamin.grauwin.me/)'s [Wavify](https://github.com/peacepostman/wavify) plug-in.
