@@ -1,4 +1,10 @@
-import { createSignal, onCleanup, onMount } from 'solid-js';
+import {
+  createSignal,
+  mergeProps,
+  onCleanup,
+  onMount,
+  splitProps
+} from 'solid-js';
 import type { JSX, PropsWithChildren } from 'solid-js';
 
 export type Point = {
@@ -26,22 +32,29 @@ export type WaveHTMLProps = Omit<
 
 export type WaveProps = Partial<BaseWaveProps & WaveHTMLProps>;
 
-export default function Wave({
-  amplitude = 20,
-  height = 20,
-  points = 3,
-  speed = 0.15,
+export default function Wave(baseProps: PropsWithChildren<WaveProps>) {
+  const props = mergeProps({
+    amplitude: 20,
+    height: 20,
+    points: 3,
+    speed: 0.15,
+  }, baseProps);
 
-  style,
-  className,
-  fill,
-  paused,
-  children,
-  id,
-  ref,
+  const [local, rest] = splitProps(props, [
+    "amplitude",
+    "height",
+    "points",
+    "speed",
 
-  ...rest
-}: PropsWithChildren<WaveProps>) {
+    "style",
+    "className",
+    "fill",
+    "paused",
+    "children",
+    "id",
+    "ref",
+  ]);
+
   const [path, setPath] = createSignal('');
 
   let lastUpdate = 0;
@@ -51,12 +64,12 @@ export default function Wave({
 
   function calculateWavePoints() {
     const pointList = [];
-    for (let i = 0; i <= Math.max(points, 1); i++) {
+    for (let i = 0; i <= Math.max(local.points, 1); i++) {
       const scale = 100;
-      const x = i / points * getWidth();
-      const seed = (step + (i + i % points)) * speed * scale;
-      const currentHeight = Math.sin(seed / scale) * amplitude;
-      const y = Math.sin(seed / scale) * currentHeight + height;
+      const x = i / local.points * getWidth();
+      const seed = (step + (i + i % local.points)) * local.speed * scale;
+      const currentHeight = Math.sin(seed / scale) * local.amplitude;
+      const y = Math.sin(seed / scale) * currentHeight + local.height;
       pointList.push({ x, y });
     }
     return pointList;
@@ -83,15 +96,15 @@ export default function Wave({
     return svg;
   }
 
-  const getWidth = () => ref!.offsetWidth;
-  const getHeight = () => ref!.offsetHeight;
+  const getWidth = () => local.ref!.offsetWidth;
+  const getHeight = () => local.ref!.offsetHeight;
 
   function redraw() {
     setPath(buildPath(calculateWavePoints()));
   }
 
   function draw() {
-    if (!paused) {
+    if (!local.paused) {
       const now = new Date().getTime();
       elapsed += now - lastUpdate;
       lastUpdate = now;
@@ -123,10 +136,10 @@ export default function Wave({
 
   return (
     <div
-      style={{ width: '100%', display: 'inline-block', ...style }}
-      className={className}
-      id={id}
-      ref={ref!}
+      style={{ width: '100%', display: 'inline-block', ...local.style }}
+      className={local.className}
+      id={local.id}
+      ref={local.ref!}
     >
       <svg
         width="100%"
@@ -134,8 +147,8 @@ export default function Wave({
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {children}
-        <path d={path()} fill={fill} {...rest} />
+        {local.children}
+        <path d={path()} fill={local.fill} {...rest} />
       </svg>
     </div>
   );
