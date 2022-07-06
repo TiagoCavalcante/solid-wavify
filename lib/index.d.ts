@@ -1,11 +1,12 @@
 import { JSX } from "solid-js";
+type Fn<T> = (el: T) => void;
 type BaseWaveProps = {
     style: JSX.CSSProperties;
     class: string;
     fill: JSX.IntrinsicElements["path"]["fill"];
     paused: Boolean;
     id: string;
-    ref: HTMLDivElement | null;
+    ref: Fn<HTMLDivElement> | HTMLDivElement | null;
     height: number;
     amplitude: number;
     speed: number;

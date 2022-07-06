@@ -7,9 +7,15 @@ import {
 } from "solid-js";
 import type { JSX, ParentProps } from "solid-js";
 
+type Fn<T> = (el: T) => void;
+
+function isFunction<T>(obj: T | Fn<T>): obj is Fn<T> {
+  return typeof obj === "function";
+};
+
 export type Point = {
   x: number,
-  y: number;
+  y: number,
 };
 
 export type BaseWaveProps = {
@@ -18,7 +24,7 @@ export type BaseWaveProps = {
   fill: JSX.IntrinsicElements["path"]["fill"],
   paused: Boolean,
   id: string,
-  ref: HTMLDivElement | null,
+  ref: Fn<HTMLDivElement> | HTMLDivElement | null,
   height: number,
   amplitude: number,
   speed: number,
@@ -57,6 +63,7 @@ export default function Wave(baseProps: ParentProps<WaveProps>) {
 
   const [path, setPath] = createSignal("");
 
+  let ref: HTMLDivElement;
   let lastUpdate = 0;
   let elapsed = 0;
   let step = 0;
@@ -96,8 +103,8 @@ export default function Wave(baseProps: ParentProps<WaveProps>) {
     return svg;
   }
 
-  const getWidth = () => local.ref!.offsetWidth;
-  const getHeight = () => local.ref!.offsetHeight;
+  const getWidth = () => ref.offsetWidth;
+  const getHeight = () => ref.offsetHeight;
 
   function redraw() {
     setPath(buildPath(calculateWavePoints()));
@@ -139,7 +146,16 @@ export default function Wave(baseProps: ParentProps<WaveProps>) {
       style={{ width: "100%", display: "inline-block", ...local.style }}
       class={local.class}
       id={local.id}
-      ref={local.ref!}
+      ref={(element) => {
+        if (local.ref) {
+          if (isFunction(local.ref)) {
+            local.ref(element);
+          } else {
+            local.ref = element;
+          }
+        }
+        ref = element;
+      }}
     >
       <svg
         width="100%"
