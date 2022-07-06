@@ -1,7 +1,7 @@
 import { JSX } from "solid-js";
 type BaseWaveProps = {
     style: JSX.CSSProperties;
-    className: string;
+    class: string;
     fill: JSX.IntrinsicElements["path"]["fill"];
     paused: Boolean;
     id: string;

@@ -1,6 +1,6 @@
-import WaveBase from './wave';
-import type { BaseWaveProps, WaveHTMLProps } from './wave';
-import { splitProps } from 'solid-js';
+import WaveBase from "./wave";
+import type { BaseWaveProps, WaveHTMLProps } from "./wave";
+import { splitProps } from "solid-js";
 
 const defaults = {
   height: 20,
@@ -14,7 +14,7 @@ export type WaveProps = WaveHTMLProps
   & { options: Partial<Omit<BaseWaveProps, "fill" | "paused">>; };
 
 export default function Wave(props: WaveProps) {
-  const [local, rest] = splitProps(props, ["fill", "paused", "options"])
+  const [local, rest] = splitProps(props, ["fill", "paused", "options"]);
 
   return (
     <WaveBase

@@ -1,12 +1,12 @@
 {
   "name": "solid-wavify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Animated wave component for SolidJS",
   "source": "src/index.tsx",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
-  "sideEffects": false,
   "types": "lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "parcel build"
   },

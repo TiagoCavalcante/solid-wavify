@@ -4,8 +4,8 @@ import {
   onCleanup,
   onMount,
   splitProps
-} from 'solid-js';
-import type { JSX, PropsWithChildren } from 'solid-js';
+} from "solid-js";
+import type { JSX, ParentProps } from "solid-js";
 
 export type Point = {
   x: number,
@@ -14,7 +14,7 @@ export type Point = {
 
 export type BaseWaveProps = {
   style: JSX.CSSProperties,
-  className: string,
+  class: string,
   fill: JSX.IntrinsicElements["path"]["fill"],
   paused: Boolean,
   id: string,
@@ -32,7 +32,7 @@ export type WaveHTMLProps = Omit<
 
 export type WaveProps = Partial<BaseWaveProps & WaveHTMLProps>;
 
-export default function Wave(baseProps: PropsWithChildren<WaveProps>) {
+export default function Wave(baseProps: ParentProps<WaveProps>) {
   const props = mergeProps({
     amplitude: 20,
     height: 20,
@@ -47,7 +47,7 @@ export default function Wave(baseProps: PropsWithChildren<WaveProps>) {
     "speed",
 
     "style",
-    "className",
+    "class",
     "fill",
     "paused",
     "children",
@@ -55,7 +55,7 @@ export default function Wave(baseProps: PropsWithChildren<WaveProps>) {
     "ref",
   ]);
 
-  const [path, setPath] = createSignal('');
+  const [path, setPath] = createSignal("");
 
   let lastUpdate = 0;
   let elapsed = 0;
@@ -136,8 +136,8 @@ export default function Wave(baseProps: PropsWithChildren<WaveProps>) {
 
   return (
     <div
-      style={{ width: '100%', display: 'inline-block', ...local.style }}
-      className={local.className}
+      style={{ width: "100%", display: "inline-block", ...local.style }}
+      class={local.class}
       id={local.id}
       ref={local.ref!}
     >
